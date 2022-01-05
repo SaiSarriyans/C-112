@@ -13,11 +13,11 @@ span
   width: 350px;
   height: 300px; 
 }
-#Result_Gesture_name ,#result_Gesture_name_2  
+#Result_emotion_name ,#result_emotion_name_2  
 {
   color: black;
 }
-.Gesture_name
+.emotion_name
 {
   font-size: 40px;
 }

@@ -22,7 +22,7 @@ document.getElementById("result").innerHTML = '<img id="captured_image" src="'+d
 
 console.log('ml5 version:', ml5.version);
 
-classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/q85_Kq6e8/model.json',modelLoaded);
+classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/AJI3FSzTI/model.json',modelLoaded);
 
 function modelLoaded(){
     console.log('Model Loaded!');
@@ -30,8 +30,8 @@ function modelLoaded(){
 
 function speak(){
     var synth = window.speechSynthesis;
-    speak_data_1 = "The First Gesture is "+Predction1;
-    speak_data_2 = "And Second Gesture is "+Predction2;
+    speak_data_1 = "The First prediction is "+Predction1;
+    speak_data_2 = "And Second prediction is "+Predction2;
     var utterThis = new SpeechSynthesisUtterance(speak_data_1 + speak_data_2);
 synth.speak(utterThis);
 }
@@ -47,8 +47,8 @@ function gotResult(error, results) {
         console.error(error);
     }else{
         console.log(results);
-        document.getElementById("Result_Gesture_name").innerHTML = results[0].label;
-        document.getElementById("result_Gesture_name_2").innerHTML = results[1].label;
+        document.getElementById("Result_emotion_name").innerHTML = results[0].label;
+        document.getElementById("result_emotion_name_2").innerHTML = results[1].label;
     Predction1 = results[0].label;
     Predction2 = results[1].label;
     speak();
